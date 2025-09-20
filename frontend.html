@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tech Bot</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+   h1 {
+  font-size: 3rem;
+  margin-top: -330px;
+  text-align: center; /* 'top' is not a valid value, center it instead */
+  z-index: 1;
+
+  /* 🌌 Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 10px 20px;
+ 
+
+  /* 🌈 Neon Glow */
+  color: #0ff;
+  text-shadow: 
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #09f,
+    0 0 40px #0ff;
+
+  /* ✨ Animation */
+  animation: glowPulse 2s infinite alternate ease-in-out;
+}
+
+/* 🔄 Glow Pulse Animation */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #09f,
+      0 0 40px #0ff;
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #09f,
+      0 0 60px #0ff;
+    transform: scale(1.05);
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  max-width: 1000px;
+  margin: 10px auto;
+  text-align: center;
+  z-index: 1;
+
+  /* 🌌 Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  /* ✨ Softer Neon Glow */
+  color: #fff;
+  text-shadow: 
+    0 0 5px #09f,
+    0 0 10px #0ff;
+
+  /* 🎬 Smooth Fade + Type Animation */
+  opacity: 0;
+  animation: fadeIn 2s ease forwards, typing 3s steps(40) 1s forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #0ff; /* typing cursor */
+}
+
+/* 🔄 Fade-in */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ⌨️ Typing Effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+    /* ☀️ Solar System Background */
+    .solar-system {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .sun {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ffcc00, #ff6600);
+      border-radius: 50%;
+      box-shadow: 0 0 50px 20px rgba(255, 204, 0, 0.6);
+      position: absolute;
+    }
+
+    .orbit {
+      position: absolute;
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .planet {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: cyan;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(200px);
+      box-shadow: 0 0 10px cyan;
+    }
+
+  
+
+    /* 💬 Speech bubble */
+    .speech {
+      margin-top: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* 🚀 Buttons */
+    .buttons {
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #0ff, #09f, #f0f);
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.3s;
+      box-shadow: 0 0 20px #0ff;
+    }
+
+    .buttons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px #0ff, 0 0 60px #f0f;
+    }
+  </style>
+</head>
+<body>
+    <div>
+    <h1>Neoo - The Bot</h1>
+    <h3>Your futuristic AI assistant that delivers top dev news at 9AM & 6PM every day</h3>
+    </div>
+  <!-- 🌌 Solar System Background -->
+  <div class="solar-system">
+    <div class="sun"></div>
+    <div class="orbit" style="width: 300px; height: 300px;">
+      <div class="planet" style="background: #00ffff; transform: translateX(150px);"></div>
+    </div>
+    <div class="orbit" style="width: 500px; height: 500px; animation-duration: 30s;">
+      <div class="planet" style="background: #ff00ff; transform: translateX(250px);"></div>
+    </div>
+    <div class="orbit" style="width: 700px; height: 700px; animation-duration: 40s;">
+      <div class="planet" style="background: #00ff00; transform: translateX(350px);"></div>
+    </div>
+    <div class="orbit" style="width: 900px; height: 900px; animation-duration: 50s;">
+      <div class="planet" style="background: #e5ff00; transform: translateX(450px);"></div>
+    </div>
+  </div>
+
+ 
+
+  <!-- 🚀 Buttons -->
+  <div class="buttons">
+    <a href="https://t.me/Neoo67_bot" target="_blank">Visit Bot</a>
+    <a href="https://github.com/devx-manu/Neoo.bot.git" target="_blank">Visit GitHub</a>
+    <a href="https://www.linkedin.com/in/dev-kannadiga-74385037b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+  </div>
+</body>
+</html>
