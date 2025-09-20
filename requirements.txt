@@ -4,3 +4,4 @@ beautifulsoup4
 openai
 schedule
 python-dotenv
+lxml
